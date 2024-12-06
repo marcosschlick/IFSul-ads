@@ -1,4 +1,5 @@
 package bens;
+
 import java.awt.CardLayout;
 import java.awt.Color;
 
@@ -16,20 +17,23 @@ public class TelaBens extends JPanel {
 
 		Title title = new Title("Bens");
 
-		NavigationButton vizualizarBens = new NavigationButton("Vizualizar", 100, 400, 300, 200);
+		NavigationButton visualizarBens = new NavigationButton("Visualizar", 100, 400, 300, 200);
 		NavigationButton procurarBem = new NavigationButton("Procurar", 450, 400, 300, 200);
 		NavigationButton novoBem = new NavigationButton("Criar", 800, 400, 300, 200);
 
-		
 		procurarBem.addActionListener(e -> cardLayout.show(cards, "TelaProcurarBem"));
 		novoBem.addActionListener(e -> cardLayout.show(cards, "TelaCriarBem"));
-		vizualizarBens.addActionListener(e -> cardLayout.show(cards, "TelaVizualizarBens"));
-		
-		
+
+		visualizarBens.addActionListener(e -> {
+			TelaVisualizarBens telaVisualizarBens = new TelaVisualizarBens(cardLayout, cards);
+			cards.add(telaVisualizarBens, "TelaVisualizarBens");
+			cardLayout.show(cards, "TelaVisualizarBens");
+		});
+
 		BackButton backButton = new BackButton(cardLayout, cards, "TelaPrincipal");
 
 		add(title);
-		add(vizualizarBens);
+		add(visualizarBens);
 		add(procurarBem);
 		add(novoBem);
 		add(backButton);
