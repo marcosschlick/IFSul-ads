@@ -135,7 +135,7 @@ public class TelaCriarFuncionario extends JPanel {
 		stmt.setString(3, email);
 		stmt.setString(4, telefone);
 		stmt.setInt(5, setorId);
-		stmt.execute();
+		stmt.executeUpdate();
 		stmt.close();
 		connection.close();
 	}

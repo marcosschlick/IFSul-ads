@@ -1,4 +1,5 @@
 package funcionario;
+
 import java.awt.CardLayout;
 import java.awt.Color;
 
@@ -16,15 +17,25 @@ public class TelaFuncionarios extends JPanel {
 
 		Title title = new Title("Funcionários");
 
-		NavigationButton vizualizarFuncionarios = new NavigationButton("Vizualizar", 250, 400, 300, 200);
-		NavigationButton novoFuncionario = new NavigationButton("Criar", 650, 400, 300, 200);
-		
-		
+		NavigationButton vizualizarFuncionarios = new NavigationButton("Visualizar", 95, 400, 230, 180);
+		NavigationButton novoFuncionario = new NavigationButton("Criar", 355, 400, 230, 180);
+		NavigationButton deletarFuncionario = new NavigationButton("Deletar", 615, 400, 230, 180);
+		NavigationButton editarFuncionario = new NavigationButton("Editar", 875, 400, 230, 180);
+
 		novoFuncionario.addActionListener(e -> cardLayout.show(cards, "TelaCriarFuncionario"));
-		vizualizarFuncionarios.addActionListener(e -> cardLayout.show(cards, "TelaVisualizarFuncionarios"));
-		
+		deletarFuncionario.addActionListener(e -> cardLayout.show(cards, "TelaDeletarFuncionario"));
+		editarFuncionario.addActionListener(e -> cardLayout.show(cards, "TelaEditarFuncionario"));
+
+		vizualizarFuncionarios.addActionListener(e -> {
+			TelaVisualizarFuncionarios telaVisualizarFuncionarios = new TelaVisualizarFuncionarios(cardLayout, cards);
+			cards.add(telaVisualizarFuncionarios, "TelaVisualizarFuncionarios");
+			cardLayout.show(cards, "TelaVisualizarFuncionarios");
+		});
+
 		BackButton backButton = new BackButton(cardLayout, cards, "TelaPrincipal");
 
+		add(editarFuncionario);
+		add(deletarFuncionario);
 		add(title);
 		add(vizualizarFuncionarios);
 		add(novoFuncionario);

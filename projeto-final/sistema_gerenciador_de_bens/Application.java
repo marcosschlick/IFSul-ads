@@ -8,14 +8,15 @@ import javax.swing.JPanel;
 import bens.TelaBens;
 import bens.TelaCriarBem;
 import bens.TelaProcurarBem;
-import bens.TelaVizualizarBens;
 import commons.TelaPrincipal;
 import funcionario.TelaCriarFuncionario;
+import funcionario.TelaDeletarFuncionario;
+import funcionario.TelaEditarFuncionario;
 import funcionario.TelaFuncionarios;
-import funcionario.TelaVisualizarFuncionarios;
 import setor.TelaCriarSetor;
+import setor.TelaDeletarSetor;
+import setor.TelaEditarSetor;
 import setor.TelaSetores;
-import setor.TelaVisualizarSetores;
 
 public class Application {
 	public static void main(String[] args) {
@@ -37,9 +38,10 @@ public class Application {
 		cards.add(new TelaCriarFuncionario(cardLayout, cards), "TelaCriarFuncionario");
 		cards.add(new TelaCriarSetor(cardLayout, cards), "TelaCriarSetor");
 		cards.add(new TelaCriarBem(cardLayout, cards), "TelaCriarBem");
-		cards.add(new TelaVizualizarBens(cardLayout, cards), "TelaVizualizarBens");
-		cards.add(new TelaVisualizarFuncionarios(cardLayout, cards), "TelaVisualizarFuncionarios");
-		cards.add(new TelaVisualizarSetores(cardLayout, cards), "TelaVisualizarSetores");
+		cards.add(new TelaDeletarSetor(cardLayout, cards), "TelaDeletarSetor");
+		cards.add(new TelaEditarSetor(cardLayout, cards), "TelaEditarSetor");
+		cards.add(new TelaDeletarFuncionario(cardLayout, cards), "TelaDeletarFuncionario");
+		cards.add(new TelaEditarFuncionario(cardLayout, cards), "TelaEditarFuncionario");
 		
 
 		frame.add(cards);

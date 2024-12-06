@@ -1,4 +1,5 @@
 package setor;
+
 import java.awt.CardLayout;
 import java.awt.Color;
 
@@ -16,14 +17,25 @@ public class TelaSetores extends JPanel {
 
 		Title title = new Title("Setores");
 
-		NavigationButton vizualizarSetores = new NavigationButton("Vizualizar", 250, 400, 300, 200);
-		NavigationButton novoSetor = new NavigationButton("Criar", 650, 400, 300, 200);
+		NavigationButton vizualizarSetores = new NavigationButton("Visualizar", 95, 400, 230, 180);
+		NavigationButton novoSetor = new NavigationButton("Criar", 355, 400, 230, 180);
+		NavigationButton deletarSetor = new NavigationButton("Deletar", 615, 400, 230, 180);
+		NavigationButton editarSetor = new NavigationButton("Editar", 875, 400, 230, 180);
 
 		novoSetor.addActionListener(e -> cardLayout.show(cards, "TelaCriarSetor"));
-		vizualizarSetores.addActionListener(e -> cardLayout.show(cards, "TelaVisualizarSetores"));
-		
+		deletarSetor.addActionListener(e -> cardLayout.show(cards, "TelaDeletarSetor"));
+		editarSetor.addActionListener(e -> cardLayout.show(cards, "TelaEditarSetor"));
+
+		vizualizarSetores.addActionListener(e -> {
+			TelaVisualizarSetores tlaVisualizarSetores = new TelaVisualizarSetores(cardLayout, cards);
+			cards.add(tlaVisualizarSetores, "TelaVisualizarSetores");
+			cardLayout.show(cards, "TelaVisualizarSetores");
+		});
+
 		BackButton backButton = new BackButton(cardLayout, cards, "TelaPrincipal");
 
+		add(editarSetor);
+		add(deletarSetor);
 		add(title);
 		add(vizualizarSetores);
 		add(novoSetor);
