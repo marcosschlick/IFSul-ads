@@ -1,7 +1,4 @@
-package game;
-
 import java.util.ArrayList;
-
 import javax.swing.JFrame;
 
 public class ColorButtonLine {
