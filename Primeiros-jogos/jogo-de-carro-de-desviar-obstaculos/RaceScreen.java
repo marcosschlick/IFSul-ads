@@ -1,5 +1,3 @@
-package game;
-
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -7,7 +5,6 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.Timer;
 import java.util.TimerTask;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
