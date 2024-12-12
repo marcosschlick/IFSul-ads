@@ -1,11 +1,8 @@
-package game1212;
-
 import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.function.Predicate;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
