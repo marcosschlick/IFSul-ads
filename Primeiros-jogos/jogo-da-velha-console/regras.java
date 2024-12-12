@@ -1,5 +1,3 @@
-package jogo;
-
 public class regras {
 	char win = '?';
 
