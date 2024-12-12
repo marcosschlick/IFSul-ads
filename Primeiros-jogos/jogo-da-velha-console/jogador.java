@@ -1,5 +1,3 @@
-package jogo;
-
 public class jogador {
 	String nome;
 	char simb;
