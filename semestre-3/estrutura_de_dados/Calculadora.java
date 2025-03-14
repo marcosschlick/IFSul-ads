@@ -1,3 +1,5 @@
+package estrutura_de_dados;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -39,7 +41,11 @@ public class Calculadora {
             @Override
             public void keyTyped(KeyEvent e) {
                 char c = e.getKeyChar();
-                if (!Character.isDigit(c)) {
+                String textoAtual = ((JTextField) e.getSource()).getText();
+                if (!Character.isDigit(c) && c != '.') {
+                    e.consume();
+                }
+                if (c == '.' && textoAtual.contains(".")) {
                     e.consume();
                 }
             }
@@ -63,7 +69,11 @@ public class Calculadora {
             @Override
             public void keyTyped(KeyEvent e) {
                 char c = e.getKeyChar();
-                if (!Character.isDigit(c)) {
+                String textoAtual = ((JTextField) e.getSource()).getText();
+                if (!Character.isDigit(c) && c != '.') {
+                    e.consume();
+                }
+                if (c == '.' && textoAtual.contains(".")) {
                     e.consume();
                 }
             }
@@ -107,47 +117,47 @@ public class Calculadora {
         janela.setVisible(true);
     }
 
-    private static long somar(JTextField campoPrimeiroNumero, JTextField campoSegundoNumero) {
-        long primeiroNumero, segundoNumero;
+    private static double somar(JTextField campoPrimeiroNumero, JTextField campoSegundoNumero) {
+        double primeiroNumero, segundoNumero;
         if (campoPrimeiroNumero.getText().isEmpty() || campoPrimeiroNumero.getText().isBlank()) {
             primeiroNumero = 0;
         } else {
-            primeiroNumero = Long.parseLong(campoPrimeiroNumero.getText());
+            primeiroNumero = Double.parseDouble(campoPrimeiroNumero.getText());
         }
         if (campoSegundoNumero.getText().isEmpty() || campoSegundoNumero.getText().isBlank()) {
             segundoNumero = 0;
         } else {
-            segundoNumero = Long.parseLong(campoSegundoNumero.getText());
+            segundoNumero = Double.parseDouble(campoSegundoNumero.getText());
         }
         return primeiroNumero + segundoNumero;
     }
 
-    private static long subtrair(JTextField campoPrimeiroNumero, JTextField campoSegundoNumero) {
-        long primeiroNumero, segundoNumero;
+    private static double subtrair(JTextField campoPrimeiroNumero, JTextField campoSegundoNumero) {
+        double primeiroNumero, segundoNumero;
         if (campoPrimeiroNumero.getText().isEmpty() || campoPrimeiroNumero.getText().isBlank()) {
             primeiroNumero = 0;
         } else {
-            primeiroNumero = Long.parseLong(campoPrimeiroNumero.getText());
+            primeiroNumero = Double.parseDouble(campoPrimeiroNumero.getText());
         }
         if (campoSegundoNumero.getText().isEmpty() || campoSegundoNumero.getText().isBlank()) {
             segundoNumero = 0;
         } else {
-            segundoNumero = Long.parseLong(campoSegundoNumero.getText());
+            segundoNumero = Double.parseDouble(campoSegundoNumero.getText());
         }
         return primeiroNumero - segundoNumero;
     }
 
-    private static long multiplicar(JTextField campoPrimeiroNumero, JTextField campoSegundoNumero) {
-        long primeiroNumero, segundoNumero;
+    private static double multiplicar(JTextField campoPrimeiroNumero, JTextField campoSegundoNumero) {
+        double primeiroNumero, segundoNumero;
         if (campoPrimeiroNumero.getText().isEmpty() || campoPrimeiroNumero.getText().isBlank()) {
             primeiroNumero = 0;
         } else {
-            primeiroNumero = Long.parseLong(campoPrimeiroNumero.getText());
+            primeiroNumero = Double.parseDouble(campoPrimeiroNumero.getText());
         }
         if (campoSegundoNumero.getText().isEmpty() || campoSegundoNumero.getText().isBlank()) {
             segundoNumero = 0;
         } else {
-            segundoNumero = Long.parseLong(campoSegundoNumero.getText());
+            segundoNumero = Double.parseDouble(campoSegundoNumero.getText());
         }
         return primeiroNumero * segundoNumero;
     }
