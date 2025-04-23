@@ -11,7 +11,7 @@ public class Car extends JPanel {
 
 	public Car() {
 		this.image = new ImageIcon(
-				"C:\\Users\\marcos\\eclipse-workspaces\\eclipse-workspace\\jogo-de-carro-de-desviar-obstaculos\\src\\game/car.png");
+				"./car.png");
 		setBackground(new Color(0, 0, 0, 0));
 		setBounds(350, 550, image.getIconWidth(), image.getIconHeight());
 		setVisible(true);

@@ -19,7 +19,7 @@ public class RaceScreen extends JFrame {
 
 	public RaceScreen() {
 		this.backgroundImage = Toolkit.getDefaultToolkit().createImage(
-				"C:\\Users\\marcos\\eclipse-workspaces\\eclipse-workspace\\jogo-de-carro-de-desviar-obstaculos\\src\\game\\street.png");
+				"./street.png");
 		setSize(800, 800);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
